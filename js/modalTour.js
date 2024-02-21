@@ -78,7 +78,7 @@ function closeModal() {
 function highLightFieldOrButton(fieldOrButtonId) {
     let fieldOrButton = document.getElementById(fieldOrButtonId);
     if (fieldOrButton) {
-        fieldOrButton.style.border = '3px solid var(--color-border)'; // Adiciona uma borda da cor da 
+        fieldOrButton.style.outline = '3px solid var(--color-border)'; // Adiciona uma borda da cor da 
     }
 }
 
@@ -86,7 +86,7 @@ function highLightFieldOrButton(fieldOrButtonId) {
 function removeFieldBorderHighlight(fieldOrButtonId) {
     let fieldOrButton = document.getElementById(fieldOrButtonId);
     if(fieldOrButton) {
-        fieldOrButton.style.border = 'none'
+        fieldOrButton.style.outline = 'none' // Remover a bordar
     }
 }
 // Função para manipular o destaque do campo/button conforme o step

@@ -217,11 +217,12 @@ main .info > div:hover {
 } */
 
 
-main .content {
-    width: 100%;
-    /* display: flex;
+main .info .content {
+    /* width: 100%; */
+    position: relative;
+    display: flex;
     flex-direction: column;
-    justify-content: center; */
+    align-items: center;
 }
 
 main .info textarea {
@@ -231,27 +232,39 @@ main .info textarea {
     height: 30vh;
     background-color: var(--color-white);
     color: var(--color-dark);
-}
-
-#copy {
-    display: none;
-}
-
-main .info .content .btn-copy {
-    display: flex;
-    justify-content: center;
+    margin-bottom: 0.5rem;
 }
 
 main .info textarea::placeholder {
     color: var(--color-dark);
 }
 
+/* main .info .content .btn-copy {
+    display: flex;
+    justify-content: center;
+} */
+
+
+
+main .info .content .btn-copy{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+main .info .content .btn-copy #copy{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
 main .content .btn-action {
     width: 13rem;
-    /* height: 3rem; */
-    padding: 1rem 0;
+    height: 3rem;
+    padding: 0.75rem;
     border-radius: var(--border-radius-1);
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;

@@ -1,3 +1,6 @@
+
+clearField('textEncrypt');
+clearField('textDecrypt');
 // Criptografa o texto
 function encrypt() {
     let inputText = document.getElementById('textEncrypt').value;
