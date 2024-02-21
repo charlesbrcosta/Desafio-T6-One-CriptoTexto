@@ -17,8 +17,10 @@ function encrypt() {
                               .replace(/u/g, 'ufat');
     // document.getElementById('textEncrypt').value = ''; // Limpa o campo de entrada
     clearField('textEncrypt');
-    document.getElementById('textDecrypt').value = outPutText  
+    document.getElementById('textDecrypt').value = outPutText 
+    blockButtonCopy('textDecrypt');
 }
+
 
 // Descriptografa  o texto
 function decrypt() {
@@ -73,7 +75,6 @@ function copyEncryptText(fieldId) {
     }
 }
 
-
 //Limpa o campo
 function clearField(fieldId) {
     let field = document.getElementById(fieldId);
@@ -81,5 +82,16 @@ function clearField(fieldId) {
         field.value = '';      
     } else {
         console.error(`Não foi encontrado com a Id Fornecidade ${ fieldId }`);
+    }
+}
+
+function blockButtonCopy(filedId) {
+    let copy = document.getElementById('copy');
+    let textDecrypt = document.getElementById(filedId);
+
+    if(textDecrypt.value.trim() !== ''){
+        copy.style.display = 'block';
+    } else {
+        copy.style.display = 'none';
     }
 }

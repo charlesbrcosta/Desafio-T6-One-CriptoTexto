@@ -233,6 +233,10 @@ main .info textarea {
     color: var(--color-dark);
 }
 
+#copy {
+    display: none;
+}
+
 main .info .content .btn-copy {
     display: flex;
     justify-content: center;

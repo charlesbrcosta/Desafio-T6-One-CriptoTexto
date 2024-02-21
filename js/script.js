@@ -15,6 +15,7 @@ closeBtn.addEventListener('click', () => {
     sideMenu.style.left = '-100%'
 });
 
+
 //Adiciona uma escuta para alternar de DarkMode para LightMode
 darkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode-variables');
