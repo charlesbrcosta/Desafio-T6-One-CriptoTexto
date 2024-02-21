@@ -1,0 +1,664 @@
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--color-dark);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 0.87rem;
+    font-weight: 500;
+}
+
+/* excluir caso não use */
+small {
+    font-size: 0.76rem;
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+strong {
+    color: var(--color-dark);
+}
+
+.text-muted {
+    color: var(--color-info-dark); 
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.NextOne {
+    color: var(--color-danger);
+}
+
+.sucess {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container {    
+    width: 96%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 12rem auto 23rem;
+    gap: 1.8rem;
+}
+
+aside {
+    height: 100vh;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .toggle .close {
+    display: none;
+    padding-right: 1rem;
+}
+
+aside .sidebar {
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    top: 1.5rem;
+    transition: var(--transition-ease);
+}
+
+aside .sidebar:hover {
+    box-shadow: none
+}
+
+aside .sidebar a {
+    height: 3.7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-info-dark);
+    position: relative;
+    margin-left: 2rem;
+    transition: var(--transition-ease);
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transform: var(--transition-ease);
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    width: 100%;   
+    bottom: 2rem;
+}
+
+
+aside .sidebar a.active {
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+aside .sidebar a.active::before {
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span {
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover {
+    color: var(--color-primary)
+}
+
+aside .sidebar a:hover span {
+    margin-left: 0.6rem;
+}
+
+main {
+    margin-top: 1.4rem;
+}
+
+main .info {
+    /* display: flex;
+    justify-content: space-between;
+    gap: 1.6rem; */
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.6rem;
+    grid-template-areas: 
+        'textEncrypt textDecrypt' ;
+}
+
+main .info > div:nth-child(1) {
+    grid-area: textEncrypt;
+}
+
+main .info > div:nth-child(2) {
+    grid-area: textDecrypt;
+}
+
+main .info > div {
+    /* flex: 1; */
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: 8px  ;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-ease); 
+}
+
+main .info > div:hover {
+    box-shadow: none;
+}
+
+/* #contentEncrypt {
+    grid-area: textEncrypt;
+}
+
+#contentDecrypt {
+    grid-area: textDecrypt;
+} */
+
+
+main .content {
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+main .info textarea {
+    width: 100%;
+    resize: none;
+    font-size: 1rem;
+    height: 30vh;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+main .info .content .btn-copy {
+    display: flex;
+    justify-content: center;
+}
+
+main .info textarea::placeholder {
+    color: var(--color-dark);
+}
+
+main .content .btn-action {
+    width: 13rem;
+    /* height: 3rem; */
+    padding: 1rem 0;
+    border-radius: var(--border-radius-1);
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main .content .btn-action:hover {
+    background-color: var(--color-success);
+    color: var(--color-dark);
+}
+
+/*  End button copy*/ 
+
+
+
+/* Button Encrypt and Decrypt */ 
+/* main .btn{
+    width: auto;
+    display: grid;
+    grid-template-columns:50% 1fr ;
+} */
+
+main .btn-container {
+    width: 100%;   
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        'btn-encrypt  btn-decrypt';
+    margin-top: 1.6rem;
+ }
+
+#encrypt{
+    grid-area: btn-encrypt;
+}
+
+#decrypt {
+    grid-area: btn-decrypt;
+    margin-left: 2rem;
+}
+
+
+main .btn-container .btn-action {
+    width: 13rem;
+    /* height: 3rem; */
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    box-shadow: var(--box-shadow);   
+    border-radius: var(--border-radius-1); 
+    padding: 1rem 0;  
+    font-size: 1rem;  
+    font-weight: 600; 
+    cursor: pointer ;
+
+}
+
+main .btn-container .btn-action:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: none;
+}
+
+
+
+/* End Button Encrypt and Decrypt */ 
+
+
+/* Button Copy */
+
+/* #copy { 
+    width: 11rem;
+    gap: 1rem;
+    background-color: var(--color-dark-variant);
+    color: var(--color-white);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-1);
+    margin-top: 1.3rem;
+    cursor: pointer ;
+    place-content: center;
+}
+
+#copy:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: none;
+} */
+
+/* End Button Copy */ 
+
+
+/* .right-section .guide .info-ad.deactive .icon {
+    background-color: var(--color-danger);
+} */
+
+/* estilização do buttom para codar e decodificar
+.class {
+    background-color: var(--color-white);
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    just-content: center;
+    cursor: pointer;
+}
+
+.class:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.calss {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+*/
+
+
+
+/* main .title h3 {
+    margin-left: 0.6rem;
+}
+*/
+
+main .info .content.focus {
+    outline: 1px solid var(--color-dark-variant);
+}
+
+.right-section {
+    margin-top: 1.4rem;
+}
+
+.right-section .nav {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right-section .nav button {
+    display: none;
+}
+
+.right-section .dark-mode {
+    width: 4.2rem;
+    height: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+}
+
+.right-section .dark-mode span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.right-section .dark-mode span.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+}
+
+.right-section .nav .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+
+.right-section .nav .profile .profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.right-section .user-profile {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: var(--transition-ease);
+}
+
+.right-section .user-profile:hover{
+    box-shadow: none;
+}
+
+.right-section .user-profile img {
+    width: 11rem;
+    height: auto;
+    margin-bottom: 0.8rem;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+
+.right-section .user-profile h2 {
+    margin-bottom: 0.2rem;
+}
+
+.right-section .guide {
+    margin-top: 2rem;
+
+}
+
+.right-section .guide .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.right-section .guide .header span {
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+
+.right-section .guide .info-ad {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-ease);
+}
+
+.right-section .guide .info-ad:hover {
+    box-shadow: none;
+}
+
+.right-section .guide .info-ad .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.right-section .guide .info-ad .icon {
+    padding: 0.6rem;
+    color: var(--color-white);
+    background-color: var(--color-success);
+    border-radius: 20%;
+    display: flex;
+}
+
+#startTour {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 95%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .logo h2 {
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 5.6rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .info {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+
+@media screen and (max-width: 768px){
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0 var(--padding-1);
+    }
+
+    aside {
+        position: fixed;
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        left: -100%;
+        /* display: none; */
+        visibility: hidden;
+        /* animation: showMenu 0.4s ease forwards; */
+        transition: visibility 0s ease, left 0.4s ease;
+    }
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+    }
+
+    aside .logo{
+        margin-left: 1rem;
+    }
+
+    aside .logo h2 {
+        display: inline;
+    }
+
+    aside .sidebar h3 {
+        display: inline;
+    }
+
+    aside .sidebar a {
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: absolute;
+        bottom: 5rem;
+    }
+
+    aside .toggle .close {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    main {
+        margin-top: 8rem;
+        padding: 0 1rem;
+
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .btn-container .btn-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .right-section {
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .right-section .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 var(--padding-1);
+        height: 4.6rem;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        margin: 0;
+    }
+
+    .right-section .nav .dark-mode {
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+
+    .right-section .profile .info {
+        display: none;
+    }
+
+    .right-section .nav button {
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+
+    .right-section .nav button span {
+        font-size: 2rem;
+    }
+
+}

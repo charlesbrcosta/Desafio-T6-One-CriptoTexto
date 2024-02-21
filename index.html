@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <title>Decodificador de Texto</title>
+    <link rel="stylesheet" href="./css/glogal.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/modalNoticeToUser.css" />
+    <link rel="stylesheet" href="./css/modalTour.css" />
+    <link rel="icon" type="image/png" href="./assets/alura+oracle01.png" />
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./assets/alura+oracle01.svg" />
+                    <h2 class="title-logo">Alura+<span class="NextOne">Oracle</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        key
+                    </span>
+                    <h3>Codificar</h3>
+                </a>   
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        person
+                    </span>
+                    <h3>Sobre</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        contact_page
+                    </span>
+                    <h3>Contato</h3>
+                </a>            
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        exit_to_app
+                    </span>
+                    <h3>Sair</h3>
+                </a>
+            </div>
+            <!-- End Menu -->
+        </aside>        
+
+        <!-- Main -->
+        <main>
+            <h1>Decodificador de texto</h1>
+            <div class="info">
+                <div id="textAreaEncryptContainer" class="content">
+                    <textarea id="textEncrypt" placeholder="Digite o texto aqui para codifica ou criptografar"></textarea>  
+                </div>
+                <div id="textAreaDecryptContainer" class="content">
+                    <textarea id="textDecrypt" placeholder="Digite o texto aqui para decodificar ou descriptografar "></textarea>       
+                    <div class="btn-copy">
+                        <button onclick="copyEncryptText()" class="btn-action" id="copy">
+                            Copiar
+                        </button>
+                    </div>  
+                </div>    
+                
+            </div> 
+            <div class="btn-container">          
+                    <button onclick="encrypt()" class="btn-action" id="encrypt">
+                        Codificar
+                    </button>             
+                    <button onclick="decrypt()" class="btn-action" id="decrypt">
+                        Decodificar
+                    </button>        
+            </div>
+        </main>
+        <!-- End Main-->
+
+        <!-- Right Section-->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Oi, <strong>Bruno</strong></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./assets/alura+oracle01.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="./assets/alura+oracle01.png">
+                    <h2>Alura + Oracle</h2>
+                    <p>Alura challenges Oracle Next One</p>
+                </div>
+            </div>
+            <div class="guide">
+                <div class="header">
+                    <h2>Tutorial</h2>
+                    <span class="material-icons-sharp">
+                        code
+                    </span>
+                </div>
+
+                <div id="startTour" class="info-ad">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            tour
+                        </span>
+                    </div>
+                    <div class="content">  
+                        <div class="info">
+                            <h3>Aprenda a utilizar esta página</h3>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Right Section -->
+    </div>
+    <!-- End Container -->
+
+    <!-- Modal Notice to User -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="material-icons-sharp">
+                close
+            </span>
+            <p id="modal-message"></p>
+            <button id="modal-ok">Ok, entendi.</button>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Modal tutorial -->
+    <div id="modalTour" class="modal-container">
+        <div class="modal-content-tour">
+            <div class="modal-step" id="step1">
+                <div class="textP">
+                    <p>Aqui nesta área selecionada é o local para digitar o texto para criptografar. Onde tem o texto informativo: Digite o texto aqui para codificar ou criptografar. </p>
+                </div>
+                <div class="page-number-container">
+                    <span class="page-number">1 de 4</span>
+                </div>
+                <div class="btn-container-tour">
+                    <button class="next-btn">Próximo</button>
+                </div>
+            </div>
+            <div class="modal-step" id="step2">
+                <div class="textP">
+                    <p>Após ter digitado o texto, clique no botão Codificar que está selecionado para criptografar a mensagem. A qualquer momento se quiser voltar para o passo anterior, clique no botão Anterior.</p>
+                </div>
+                <div class="page-number-container">
+                    <span class="page-number">2 de 4</span>
+                </div>
+                <div class="btn-container-tour">
+                    <button class="prev-btn">Anterior</button>
+                    <button class="next-btn">Próximo</button>
+                </div>
+            </div>
+            <div class="modal-step" id="step3">
+                <div class="textP">
+                    <p>Nesta segunda área que está selecionada vai mostrar o restulado do texto já criptografado.</p>
+                </div>
+                <div class="page-number-container">
+                    <span class="page-number">3 de 4</span>
+                </div>
+                <div class="btn-container-tour">
+                    <button class="prev-btn">Anterior</button>
+                    <button class="next-btn">Próximo</button>
+                </div>
+            </div>
+            <div class="modal-step" id="step4">
+                <div class="textP">
+                    <p>Para descriptografar a mensagem, basta clicar no botão Decodificar que está selecionado e o texto voltará à sua forma original </p>
+                </div>
+                <div class="page-number-container">
+                    <span class="page-number">4 de 4</span>
+                </div>
+                <div class="btn-container-tour">
+                    <button class="prev-btn">Anterior</button>
+                    <button id="closeBtn">Ok, entendi.</button>
+                </div>
+                <!-- <div class="close-container">
+                    <span id="closeModalTour" class="material-icons-sharp">
+                        close
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- End Modal tutorial -->
+
+    <script src="./js/script.js" defer></script>
+    <script src="./js/chaveEncrypt.js" defer></script>
+    <script src="./js/modalNoticeToUser.js"></script>
+    <script src="./js/modalTour.js" defer></script>
+</body>
+</html>
