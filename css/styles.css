@@ -326,64 +326,6 @@ main .btn-container .btn-action:hover {
     box-shadow: none;
 }
 
-
-
-/* End Button Encrypt and Decrypt */ 
-
-
-/* Button Copy */
-
-/* #copy { 
-    width: 11rem;
-    gap: 1rem;
-    background-color: var(--color-dark-variant);
-    color: var(--color-white);
-    padding: 0.75rem;
-    border-radius: var(--border-radius-1);
-    margin-top: 1.3rem;
-    cursor: pointer ;
-    place-content: center;
-}
-
-#copy:hover {
-    background-color: var(--color-primary);
-    color: white;
-    box-shadow: none;
-} */
-
-/* End Button Copy */ 
-
-
-/* .right-section .guide .info-ad.deactive .icon {
-    background-color: var(--color-danger);
-} */
-
-/* estilização do buttom para codar e decodificar
-.class {
-    background-color: var(--color-white);
-    border: 2px dashed var(--color-primary);
-    color: var(--color-primary);
-    display: flex;
-    align-items: center;
-    just-content: center;
-    cursor: pointer;
-}
-
-.class:hover {
-    background-color: var(--color-primary);
-    color: white;
-}
-
-.calss {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-*/
-
-
-
 /* main .title h3 {
     margin-left: 0.6rem;
 }
@@ -533,16 +475,13 @@ main .info .content.focus {
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1350px) {
     .container{
         width: 95%;
         grid-template-columns: 7rem auto 23rem;
     }
 
-    aside .logo h2 {
-        display: none;
-    }
-
+    aside .logo h2,
     aside .sidebar h3 {
         display: none;
     }
@@ -556,15 +495,33 @@ main .info .content.focus {
         margin-top: 1.8rem;
     }
 
-    main .info {
-        flex-direction: column;
-        gap: 0;
+    main {
+        position: relative;
     }
+
+    main .info {
+        display: flex;
+        flex-direction: column;       
+    }
+
+    main .btn-container  {
+        width: 100%;
+        position: relative;
+        top: 2rem;  
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main .btn-container .btn-action {
+        width: 18rem;
+        
+    }    
 }
 
 
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1060px){
+    
     .container {
         width: 100%;
         grid-template-columns: 1fr;
@@ -619,7 +576,8 @@ main .info .content.focus {
     }
 
     main {
-        margin-top: 8rem;
+        order: 2;
+        margin-top: 0;
         padding: 0 1rem;
 
     }
@@ -634,11 +592,15 @@ main .info .content.focus {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        margin-bottom: 2rem;
     }
 
     .right-section {
-        width: 94%;
-        margin: 0 auto 4rem;
+        order: 1;
+        margin-top: 6rem;
+        margin-left: 1rem;
+        width: 97%;
+        
     }
 
     .right-section .nav {
@@ -651,7 +613,7 @@ main .info .content.focus {
         height: 4.6rem;
         width: 100%;
         z-index: 2;
-        box-shadow: 0 1rem 1rem var(--color-light);
+        box-shadow: 1rem 3rem 4rem var(--color-light);
         margin: 0;
     }
 
@@ -678,4 +640,77 @@ main .info .content.focus {
         font-size: 2rem;
     }
 
+}
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    main .btn-container {
+        justify-content: center;
+        width: auto;
+    }
+
+    .right-section {
+        margin-top: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 96%;
+
+    }
+
+    .right-section .nav {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .right-section .dark-mode {
+        left: 0;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    main > h1 {
+        font-size: 1.25rem;
+    }
+    main .btn-container {
+        justify-content: center;
+        width: auto;
+    }
+
+    .info{
+        max-width: 26rem;
+    }
+
+    main .btn-container .btn-action {
+        width: 11.5rem;
+        padding: 1rem 0; 
+    }
+
+    .right-section {
+        margin-top: 6rem;
+        margin-left: auto;
+        margin-right: 1rem;
+        max-width: 26rem;
+
+    }
+
+    .right-section .nav {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .right-section .dark-mode {
+        left: 0;
+        transform: translateX(-50%);
+    }
 }

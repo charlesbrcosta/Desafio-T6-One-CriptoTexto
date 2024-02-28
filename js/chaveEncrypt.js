@@ -1,6 +1,6 @@
+// clearField('textEncrypt');
+// clearField('textDecrypt');
 
-clearField('textEncrypt');
-clearField('textDecrypt');
 // Criptografa o texto
 function encrypt() {
     let inputText = document.getElementById('textEncrypt').value;
@@ -19,7 +19,10 @@ function encrypt() {
                               .replace(/o/g, 'ober')
                               .replace(/u/g, 'ufat');
     // document.getElementById('textEncrypt').value = ''; // Limpa o campo de entrada
-    clearField('textEncrypt');
+    if(inputText.trim() !== '') {
+        clearField('textEncrypt');
+    }
+    
     document.getElementById('textDecrypt').value = outPutText 
     blockButtonCopy('textDecrypt');
 }
@@ -43,7 +46,11 @@ function decrypt() {
                               .replace(/ober/g, 'o')
                               .replace(/ufat/g, 'u');
     // document.getElementById('textDecrypt').value = '';
-    clearField('textDecrypt');
+    if(inputText.trim() !== '') {
+        clearField('textDecrypt');
+
+    }
+    
     document.getElementById('textEncrypt').value = outPutText;
 }
 
@@ -69,14 +76,15 @@ function checkUserInput(input) {
 //Copia o texto criptografado
 function copyEncryptText(fieldId) {
     let field = document.getElementById(fieldId);
-    if (field) { 
+    if (field && field.value.trim() !== '') { 
         field.select();
         document.execCommand('copy'); // Copia o texto selecionado para a área de transferência
         console.log('Texto copiado:', field.value);
     } else {
-        console.error(`Não foi possível copiar, verifique o ID fornecido: ${fieldId}`);
+        console.error(`Não foi possível copiar, verifique o ID fornecido: ${ fieldId }`);
     }
 }
+
 
 //Limpa o campo
 function clearField(fieldId) {

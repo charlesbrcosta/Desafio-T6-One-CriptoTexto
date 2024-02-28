@@ -42,7 +42,7 @@
     color: var(--color-white);
     font-weight: 600;
     text-align: justify;
-    max-width: 44rem;
+    max-width: 45.5rem;
 }
 
 .page-number-container {
@@ -81,7 +81,7 @@
     float: left; /* Alinha o botão à esquerda */
 }
 
-.modal-step .close-container {
+/* .modal-step .close-container {
     position: absolute;
     top: 20px;
     right: 20px;  
@@ -91,7 +91,7 @@
 .modal-step .close-container #closeModalTour {
     font-size: 2rem;
     font-weight: 600;
-}
+} */
 
 .modal-step .btn-container-tour button:hover,
 .modal-step .close-container #closeModalTour:hover,
@@ -99,4 +99,11 @@
     background-color: var(--color-white);
     color: var(--color-black);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1350px) {
+    .guide {
+        display: none;
+    }
+
 }
