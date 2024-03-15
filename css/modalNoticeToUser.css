@@ -60,3 +60,36 @@
     color: var(--color-black);
     cursor: pointer;
 }
+
+@media screen and (max-width: 748px) {
+    .modal-content {
+        width: 30rem;
+    }
+    
+    #modal-message {
+        font-size: 1.1rem;
+    }
+
+    #modal-ok {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .modal-content {
+        width: 24rem;
+    }
+
+    #modal-message {
+        font-size: 1rem;
+        margin-top: 4rem;
+    }
+
+    #modal-ok {
+        font-size: 1rem;
+    }
+
+    .modal .modal-content span {
+        font-size: 1.5rem;
+    }
+}

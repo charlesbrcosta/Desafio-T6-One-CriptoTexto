@@ -67,16 +67,29 @@ strong {
     color: var(--color-success);
 }
 
-.warning {
+/* .warning {
     color: var(--color-warning);
-}
+} */
 
 .container {    
     width: 96%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 12rem auto 23rem;
-    gap: 1.8rem;
+    gap: 1rem;
+}
+
+.warning {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-variant);
+}
+
+.warning h3 {
+    font-weight: 600;
 }
 
 aside {
@@ -176,9 +189,6 @@ main {
 }
 
 main .info {
-    /* display: flex;
-    justify-content: space-between;
-    gap: 1.6rem; */
     display: grid;
     grid-template-columns: auto;
     gap: 1.6rem;
@@ -195,7 +205,6 @@ main .info > div:nth-child(2) {
 }
 
 main .info > div {
-    /* flex: 1; */
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: 8px  ;
@@ -208,17 +217,7 @@ main .info > div:hover {
     box-shadow: none;
 }
 
-/* #contentEncrypt {
-    grid-area: textEncrypt;
-}
-
-#contentDecrypt {
-    grid-area: textDecrypt;
-} */
-
-
 main .info .content {
-    /* width: 100%; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -239,13 +238,6 @@ main .info textarea::placeholder {
     color: var(--color-dark);
 }
 
-/* main .info .content .btn-copy {
-    display: flex;
-    justify-content: center;
-} */
-
-
-
 main .info .content .btn-copy{
     position: absolute;
     bottom: 0;
@@ -264,7 +256,6 @@ main .content .btn-action {
     height: 3rem;
     padding: 0.75rem;
     border-radius: var(--border-radius-1);
-    /* margin: 0 auto; */
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;
@@ -275,17 +266,6 @@ main .content .btn-action:hover {
     background-color: var(--color-success);
     color: var(--color-dark);
 }
-
-/*  End button copy*/ 
-
-
-
-/* Button Encrypt and Decrypt */ 
-/* main .btn{
-    width: auto;
-    display: grid;
-    grid-template-columns:50% 1fr ;
-} */
 
 main .btn-container {
     width: 100%;   
@@ -325,11 +305,6 @@ main .btn-container .btn-action:hover {
     color: white;
     box-shadow: none;
 }
-
-/* main .title h3 {
-    margin-left: 0.6rem;
-}
-*/
 
 main .info .content.focus {
     outline: 1px solid var(--color-dark-variant);
@@ -474,7 +449,6 @@ main .info .content.focus {
     cursor: pointer;
 }
 
-
 @media screen and (max-width: 1350px) {
     .container{
         width: 95%;
@@ -581,6 +555,10 @@ main .info .content.focus {
         padding: 0 1rem;
 
     }
+    
+    main .info textarea{
+        height: 20rem;
+    }
 
     .btn-container {
         display: flex;
@@ -654,6 +632,10 @@ main .info .content.focus {
         width: auto;
     }
 
+    main .info textarea{
+        height: 15rem;
+    }
+
     .right-section {
         margin-top: 6rem;
         margin-left: auto;
@@ -696,6 +678,11 @@ main .info .content.focus {
         padding: 1rem 0; 
     }
 
+    main .info textarea{
+        height: 10rem;
+        font-size: 0.85rem;
+    }
+
     .right-section {
         margin-top: 6rem;
         margin-left: auto;
@@ -714,3 +701,101 @@ main .info .content.focus {
         transform: translateX(-50%);
     }
 }
+
+
+/* style about */
+
+main .about {
+    margin-left: 1rem;
+}
+
+.personal-info p {
+    display: flex;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.social-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    & a {
+        color: var(--color-dark);
+    }
+}
+
+.social-menu a:hover {
+    transform: scale(1.5);
+}
+
+.social-menu .github:hover {
+    color: var(--color-github);
+}
+
+.social-menu .linkedin:hover {
+    color: var(--color-linkedin);
+}
+
+.social-menu .instagram:hover{
+    color: var(--color-instagram);
+}
+
+@media screen and (max-width: 800px){
+    
+    main .about {
+        font-size: 1.4rem;
+    }
+    
+    .personal-info p {
+        font-size: 1.1rem;
+    }
+
+    .social-menu {
+        font-size: 2.2rem;
+    }
+
+    .social-menu a:hover{
+        transform: scale(1.4);
+    }
+
+
+}
+
+@media screen and (max-width: 600px){
+    main .about {
+        font-size: 1.3rem;
+    }
+
+    .personal-info  p {
+        font-size: 1rem;
+    }
+
+    .social-menu {
+        font-size: 2.1rem;
+    }
+
+    .social-menu a:hover{
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (max-width: 400px){
+    .social-menu {
+        font-size: 2rem;
+    }
+
+    .social-menu a:hover{
+        transform: scale(1.2);
+    }
+}
+
+/* End style about */

@@ -30,19 +30,19 @@
 
             <!-- Menu -->
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="#" class="nav-link" data-target="index">
                     <span class="material-icons-sharp">
                         key
                     </span>
                     <h3>Codificar</h3>
                 </a>   
-                <a href="#">
+                <a href="#" class="nav-link" data-target="about">
                     <span class="material-icons-sharp">
                         person
                     </span>
                     <h3>Sobre</h3>
                 </a>
-                <a href="#">
+                <a href="#" class="nav-link" data-target="contact">
                     <span class="material-icons-sharp">
                         contact_page
                     </span>
@@ -61,6 +61,12 @@
         <!-- Main -->
         <main>
             <h1>Decodificador de texto</h1>
+            <div class="warning">
+                <span class="material-icons-sharp">
+                    error
+                </span>
+                <h3>Apenas letras minúsculas e sem acentos</h3>
+            </div>
             <div class="info">
                 <div id="textAreaEncryptContainer" class="content">
                     <textarea id="textEncrypt" placeholder="Digite aqui o texto para codificar ou criptografar"></textarea>  
@@ -127,7 +133,6 @@
                         code
                     </span>
                 </div>
-
                 <div id="startTour" class="info-ad">
                     <div class="icon">
                         <span class="material-icons-sharp">
