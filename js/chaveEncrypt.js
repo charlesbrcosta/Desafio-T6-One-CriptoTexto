@@ -1,6 +1,3 @@
-// clearField('textEncrypt');
-// clearField('textDecrypt');
-
 // Criptografa o texto
 function encrypt() {
     let inputText = document.getElementById('textEncrypt').value;
@@ -26,7 +23,6 @@ function encrypt() {
     document.getElementById('textDecrypt').value = outPutText 
     blockButtonCopy('textDecrypt');
 }
-
 
 // Descriptografa  o texto
 function decrypt() {
@@ -63,7 +59,7 @@ function isValidInput(inputText){
     return true;
 }
 
-// Evento personalizado para verificar a entrada do usuario e disparadar o resultado
+// Evento personalizado para verificar a entrada do usuario e disparar o resultado
 function checkUserInput(input) {
     if(isValidInput(input)) {
         document.dispatchEvent(new CustomEvent('inputValid'));
@@ -96,6 +92,7 @@ function clearField(fieldId) {
     }
 }
 
+//mostra o botão copiar caso tenha texto na área de transferẽncia
 function blockButtonCopy(filedId) {
     let copy = document.getElementById('copy');
     let textDecrypt = document.getElementById(filedId);

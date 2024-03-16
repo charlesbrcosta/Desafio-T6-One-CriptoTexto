@@ -709,6 +709,11 @@ main .about {
     margin-left: 1rem;
 }
 
+main .name {
+    margin-left: 1rem;
+    margin-top: 0.75rem;
+}
+
 .personal-info p {
     display: flex;
     margin-top: 15px;
@@ -722,7 +727,7 @@ main .about {
     display: flex;
     align-items: center;
     gap: 3rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-top: 1rem;
     margin-left: 1rem;
     text-decoration: none;
@@ -731,26 +736,28 @@ main .about {
     & a {
         color: var(--color-dark);
     }
-}
+    & a:hover {
+        transform: scale(1.4);
+    }
 
-.social-menu a:hover {
-    transform: scale(1.5);
-}
-
-.social-menu .github:hover {
-    color: var(--color-github);
-}
-
-.social-menu .linkedin:hover {
-    color: var(--color-linkedin);
-}
-
-.social-menu .instagram:hover{
-    color: var(--color-instagram);
+    & .github:hover {
+        color: var(--color-github);
+    }
+    & .linkedin:hover {
+        color: var(--color-linkedin);
+    }
+    
+    & .instagram:hover{
+        color: var(--color-instagram);
+    }
 }
 
 @media screen and (max-width: 800px){
     
+    main .name {
+        font-size: 1.2rem;
+    }
+
     main .about {
         font-size: 1.4rem;
     }
@@ -764,13 +771,17 @@ main .about {
     }
 
     .social-menu a:hover{
-        transform: scale(1.4);
+        transform: scale(1.3);
     }
 
 
 }
 
 @media screen and (max-width: 600px){
+    main .name {
+        font-size: 1.1rem;
+    }
+
     main .about {
         font-size: 1.3rem;
     }
@@ -784,18 +795,97 @@ main .about {
     }
 
     .social-menu a:hover{
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
 }
 
 @media screen and (max-width: 400px){
+    main .name {
+        font-size: 1rem;
+    }
+
     .social-menu {
         font-size: 2rem;
     }
 
     .social-menu a:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
 
 /* End style about */
+
+
+/* style contact */
+
+.contact-info{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-left: 2rem;  
+    color: var(--color-info-dark);
+
+    & .material-icons-sharp {
+        margin-right: 5px;
+        position: relative;
+        font-size: 1.7rem;
+    }
+
+    & p{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    & .material-icons-sharp::after{
+        content: "|";
+        height: 100%;
+        margin-left: 20px;
+        position: absolute;
+        top: 25%;
+        transform: translateY(-50%);
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .contact-info{
+    
+        & .material-icons-sharp {
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+@media screen and (max-width: 530px){
+    .contact-info{
+    
+        & .material-icons-sharp {
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px){
+    .contact-info{
+    
+        & .material-icons-sharp {
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 1rem;
+        }
+    }
+}
+
+/* End style contact*/
