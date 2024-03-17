@@ -394,6 +394,10 @@ main .info .content.focus {
     margin-bottom: 0.2rem;
 }
 
+.right-section .user-profile .logo h2 span {
+    color: var(--color-danger);
+}
+
 .right-section .guide {
     margin-top: 2rem;
 
