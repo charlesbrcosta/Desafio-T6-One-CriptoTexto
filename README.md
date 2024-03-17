@@ -2,20 +2,22 @@
 
 Um sistema web para criptografar e descriptografar textos, apenas utilizando letras minúsculas e sem acentos. Esse desafio #challengeonedecodificador5 tem como objetivo propor o aprimoramento do conhecimento adquirido durante o curso de formação em programação.
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 ## Tecnologias utilizadas
 
-<div style="display: flex; align-items: center; gap: 10px;">
-   <ul><li></li></ul><i class="fab fa-html5 fa-2x" style="color:#e34c26;"></i> <h4 style="margin-bottom: 25px;">HTML</h4>
-</div>
+<div>
+   <div style="display: flex; gap: 10px;">
+      <img src="./assets/icons/icons8-html-48.png" width="48">
+      <h4>HTML</h4>
+   </div>
 
-<div style="display: flex; align-items: center; gap: 10px;">
-   <ul><li></li></ul><i class="fab fa-css3-alt fa-2x" style="color:#264de4;"></i><h4 style="margin-bottom: 25px;">CSS</h4>
-</div>
-
-<div style="display: flex; align-items: center; gap: 10px;">
-   <ul><li></li></ul><i class="fab fa-js-square fa-2x" style="color:#f0db4f;"></i> <h4 style="margin-bottom: 25px;">JavaScript</h4>
+   <div style="display: flex; gap: 10px;">
+      <img src="./assets/icons/icons8-css-100.png" width="48";>
+      <h4>CSS</h4>
+   </div>
+   <div style="display: flex; gap: 10px;">
+      <img src="./assets/icons/icons8-javascript-48.png" width="48";>
+      <h4>JavaScript</h4>
+   </div>
 </div>
 
 ## Visão Geral do Projeto
