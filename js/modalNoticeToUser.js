@@ -25,7 +25,7 @@ function showModal(message) {
     modal.style.display = 'block';
 }
 
-// Adiciona a entrada de eventos personalizados do arquivo chavaEncrypt
+// Adiciona a entrada de eventos personalizados do arquivo keyEncryptDecrypt.js
 document.addEventListener('inputValid', function() {
     modal.style.display = 'none';
 });

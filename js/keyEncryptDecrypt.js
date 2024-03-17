@@ -103,3 +103,13 @@ function blockButtonCopy(filedId) {
         copy.style.display = 'none';
     }
 }
+
+// Função para limpar os campos de texto ao carregar a página
+function clearTextFields() {
+    document.getElementById('textEncrypt').value = '';
+    document.getElementById('textDecrypt').value = '';
+}
+
+// Evento para limpar os campos de texto ao carregar a página
+document.addEventListener('DOMContentLoaded', clearTextFields);
+

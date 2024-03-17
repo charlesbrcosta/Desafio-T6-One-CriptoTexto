@@ -21,6 +21,20 @@ darkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode-variables');
     darkMode.querySelector('span:nth-child(1)').classList.toggle('active');
     darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
+
+    //Salva o estado do darkMode no localStorage 
+    const isDarkModeEnabled = document.body.classList.contains('dark-mode-variables');
+    localStorage.setItem('darkModeEnabled', isDarkModeEnabled);
+});
+
+//Aplica o estado do darkMode no localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+    if(darkModeEnabled === 'true'){
+        document.body.classList.add('dark-mode-variables');
+        darkMode.querySelector('span:nth-child(1)').classList.toggle('active');
+        darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
+    }
 });
 
 // Adiciona uma escuta para o evento resize
