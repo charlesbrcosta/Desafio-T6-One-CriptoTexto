@@ -1,4 +1,4 @@
-# CriptoTexto - #challengeonedecodificador5
+# CriptoTexto - #challengeonedecodificador6
 
 O CriptoTexto é uma ferramenta simples e eficaz para codificar e decodificar textos inseridos pelo usuário. Com recursos de DarkMode e LightMode, responsividade para diferentes dispositivos e um menu mobile intuitivo, o CriptoTexto oferece uma experiência de uso agradável e funcional. Além disso, um tutorial básico está disponível para ajudar os usuários a aproveitarem ao máximo todas as funcionalidades oferecidas. Sinta-se à vontade para explorar e compartilhar textos criptografados com seus amigos(as)!
 
@@ -21,7 +21,7 @@ O CriptoTexto é uma ferramenta simples e eficaz para codificar e decodificar te
 
 ### Interface do Usuário Responsiva:
 
-<div style="display: flex; justify-content: space-between; margin-right: 50px;"> 
+<div style="display: flex; justify-content: flex-start; gap: 90px;"> 
    <div>
       <h4>Sem o Menu Mobile</h4>
       <img src="./assets/screenShot/responsiveLightDarkMode.png" width="600">
@@ -50,7 +50,7 @@ Para uma experiência completa e visual do CriptoTexto em funcionamento, assista
 
 ![Demonstração](./assets/screenShot/CriptoTexto.gif)
 
-Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador5/).
+Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador6/).
 
 ## :warning: Pré-requisitos
 
