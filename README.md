@@ -1,6 +1,6 @@
 # CriptoTexto - #challengeonedecodificador5
 
-Um sistema web para criptografar e descriptografar textos, apenas utilizando letras minúsculas e sem acentos. Esse desafio #challengeonedecodificador5 tem como objetivo propor o aprimoramento do conhecimento adquirido durante o curso de formação em programação.
+O CriptoTexto é uma ferramenta simples e eficaz para codificar e decodificar textos inseridos pelo usuário. Com recursos de DarkMode e LightMode, responsividade para diferentes dispositivos e um menu mobile intuitivo, o CriptoTexto oferece uma experiência de uso agradável e funcional. Além disso, um tutorial básico está disponível para ajudar os usuários a aproveitarem ao máximo todas as funcionalidades oferecidas. Sinta-se à vontade para explorar e compartilhar textos criptografados com seus amigos(as)!
 
 ## :dizzy: Tecnologias utilizadas
 
@@ -46,7 +46,11 @@ Um sistema web para criptografar e descriptografar textos, apenas utilizando let
 
 ## :mag: Demonstração
 
-Para visualizar a demonstração do CriptoTexto, [clique aqui](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador5/).
+Para uma experiência completa e visual do CriptoTexto em funcionamento, assista ao vídeo demonstrativo abaixo:
+
+![Demonstração](./assets/screenShot/CriptoTexto.gif)
+
+Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador5/).
 
 ## :warning: Pré-requisitos
 
