@@ -28,7 +28,6 @@ function encrypt() {
     const inputText = textEncrypt.value.trim();
 
     if (!isValidInput(inputText)) {
-        clearField('textEncrypt');
         return;
     }
 
@@ -49,7 +48,6 @@ function decrypt() {
     const inputText = textDecrypt.value.trim();
 
     if (!isValidInput(inputText)) {
-        clearField('textDecrypt');
         return;
     }
     const outPutText = inputText.replace(/enter/g, 'e')
@@ -82,10 +80,16 @@ function copyEncryptText() {
 // Despacha um evento personalizado com base na validação da entrada
 function dispatchCustomEvent(input) {
     const isValid = isValidInput(input);
-    const eventName = isValid ? 'inputValid' : 'inputInvalid';
+    const eventName = isValid ? 'inputValid': 'inputInvalid';
     const customEvent = new CustomEvent(eventName, { detail: isValid });
     document.dispatchEvent(customEvent);
+    
 }
+
+// Event listener para o evento personalizado 'inputInvalid'
+document.addEventListener('inputInvalid', function(){
+    clearTextFields();
+});
 
 // Limpar um campo de texto
 function clearField(fieldId) {
