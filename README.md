@@ -4,9 +4,11 @@ O CriptoTexto é uma ferramenta simples e eficaz para codificar e decodificar te
 
 ## :dizzy: Tecnologias utilizadas
 
-[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](HTML5-url)
-[![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](CSS3-url)
-[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](JavaScript-url)
+<div>
+  <img src="https://img.shields.io/badge/HTML5-e34c26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+</div>
 
 
 ## :computer: Visão Geral do Projeto
@@ -50,7 +52,7 @@ Para uma experiência completa e visual do CriptoTexto em funcionamento, assista
 
 ![Demonstração](./assets/screenShot/CriptoTexto.gif)
 
-Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador6/).
+Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui.](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador6)
 
 ## :warning: Pré-requisitos
 

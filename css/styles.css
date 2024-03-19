@@ -245,7 +245,7 @@ main .info .content .btn-copy{
 }
 
 main .info .content .btn-copy #copy{
-    display: none;
+    /* display: none; */
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;

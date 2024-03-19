@@ -1,115 +1,107 @@
-// Criptografa o texto
+// Elemntos DOM
+const textEncrypt = document.getElementById('textEncrypt');
+const textDecrypt = document.getElementById('textDecrypt');
+const copyButton = document.getElementById('copy');
+
+// Adicionar event listeners
+textEncrypt.addEventListener('input', handleInput);
+textDecrypt.addEventListener('input', handleInput);
+copyButton.addEventListener('click', copyEncryptText);
+
+// Event handler para mudanças nos campos do texto
+function handleInput() {
+    updateCopyButtonState();
+    dispatchCustomEvent(this.value);
+}
+
+// Atualiza o estado do botão "Copiar" com base nos 
+function updateCopyButtonState() {
+    if (textDecrypt.value.trim() !== '') {
+        copyButton.removeAttribute('hidden');
+    } else {
+        copyButton.setAttribute('hidden', 'true');
+    }
+}
+
+// Criptografar o texto
 function encrypt() {
-    let inputText = document.getElementById('textEncrypt').value;
+    const inputText = textEncrypt.value.trim();
 
-    checkUserInput(inputText);
-
-    if(!isValidInput(inputText)) {
-        
-        // alert('Digite apenas letras minúsculas e sem acentos');
-        return; // Esse return interrompe a execução da função
-    }
-    
-    let outPutText = inputText.replace(/e/g, 'enter')
-                              .replace(/i/g, 'imes')
-                              .replace(/a/g, 'ai')
-                              .replace(/o/g, 'ober')
-                              .replace(/u/g, 'ufat');
-    // document.getElementById('textEncrypt').value = ''; // Limpa o campo de entrada
-    if(inputText.trim() !== '') {
+    if (!isValidInput(inputText)) {
         clearField('textEncrypt');
+        return;
     }
+
+    const outPutText = inputText.replace(/e/g, 'enter')
+                                .replace(/i/g, 'imes')
+                                .replace(/a/g, 'ai')
+                                .replace(/o/g, 'ober')
+                                .replace(/u/g, 'ufat');
     
-    document.getElementById('textDecrypt').value = outPutText 
-    blockButtonCopy('textDecrypt');
+    clearField('textEncrypt');
+    textDecrypt.value = outPutText; 
+
+    updateCopyButtonState(); // Atualiza o estado do botão "Copiar"
 }
 
-// Descriptografa  o texto
+// Descriptografar o texto
 function decrypt() {
-    let inputText = document.getElementById('textDecrypt').value;
+    const inputText = textDecrypt.value.trim();
 
-    checkUserInput(inputText);
-
-    if(!isValidInput(inputText)) {
-        
-        // alert('Digite apenas letras minúsculas e sem acentos');
-        return; // Esse return interrompe a execução da função
-    }
-
-    let outPutText = inputText.replace(/enter/g, 'e')
-                              .replace(/imes/g, 'i')
-                              .replace(/ai/g, 'a')
-                              .replace(/ober/g, 'o')
-                              .replace(/ufat/g, 'u');
-    // document.getElementById('textDecrypt').value = '';
-    if(inputText.trim() !== '') {
+    if (!isValidInput(inputText)) {
         clearField('textDecrypt');
-
+        return;
     }
+    const outPutText = inputText.replace(/enter/g, 'e')
+                                .replace(/imes/g, 'i')
+                                .replace(/ai/g, 'a')
+                                .replace(/ober/g, 'o')
+                                .replace(/ufat/g, 'u');
+
+    clearField('textDecrypt');
+    textEncrypt.value = outPutText;       
     
-    document.getElementById('textEncrypt').value = outPutText;
+    updateCopyButtonState(); // Atualiza o estado do botão "Copiar"
 }
 
-
-// Valida entrada do texto se tem maiúsculas, minusculas e caracteres especiais
-function isValidInput(inputText){
-    if(!/^[a-z\s]*$/.test(inputText)) {
-        return false;
-    }
-    return true;
+// validação da entrada do texto
+function isValidInput(inputText) {
+    return /^[a-z\s]*$/.test(inputText);
 }
 
-// Evento personalizado para verificar a entrada do usuario e disparar o resultado
-function checkUserInput(input) {
-    if(isValidInput(input)) {
-        document.dispatchEvent(new CustomEvent('inputValid'));
+// Copiar o texto criptografado
+function copyEncryptText() {
+    if (textDecrypt && textDecrypt.value.trim() !== '') {
+        textDecrypt.select();
+        document.execCommand('copy'); // Copia o texto seleciona para a área de transferência
     } else {
-        document.dispatchEvent(new CustomEvent('inputInvalid'));
+        console.error('Não foi possível copiar, verifique se há texto criptografado.');
     }
 }
 
-
-//Copia o texto criptografado
-function copyEncryptText(fieldId) {
-    let field = document.getElementById(fieldId);
-    if (field && field.value.trim() !== '') { 
-        field.select();
-        document.execCommand('copy'); // Copia o texto selecionado para a área de transferência
-        console.log('Texto copiado:', field.value);
-    } else {
-        console.error(`Não foi possível copiar, verifique o ID fornecido: ${ fieldId }`);
-    }
+// Despacha um evento personalizado com base na validação da entrada
+function dispatchCustomEvent(input) {
+    const isValid = isValidInput(input);
+    const eventName = isValid ? 'inputValid' : 'inputInvalid';
+    const customEvent = new CustomEvent(eventName, { detail: isValid });
+    document.dispatchEvent(customEvent);
 }
 
-
-//Limpa o campo
+// Limpar um campo de texto
 function clearField(fieldId) {
-    let field = document.getElementById(fieldId);
-    if(field){
-        field.value = '';      
+    const field = document.getElementById(fieldId);
+    if (field) {
+        field.value = '';
     } else {
-        console.error(`Não foi encontrado com a Id Fornecidade ${ fieldId }`);
+        console.error(`Não foi encontrado o campo com o ID fornecido: ${fieldId}`);
     }
 }
 
-//mostra o botão copiar caso tenha texto na área de transferẽncia
-function blockButtonCopy(filedId) {
-    let copy = document.getElementById('copy');
-    let textDecrypt = document.getElementById(filedId);
-
-    if(textDecrypt.value.trim() !== ''){
-        copy.style.display = 'block';
-    } else {
-        copy.style.display = 'none';
-    }
-}
-
-// Função para limpar os campos de texto ao carregar a página
+// Limpar os campos de texto ao carregar a página
 function clearTextFields() {
-    document.getElementById('textEncrypt').value = '';
-    document.getElementById('textDecrypt').value = '';
+    clearField('textEncrypt');
+    clearField('textDecrypt');
+    updateCopyButtonState();
 }
-
 // Evento para limpar os campos de texto ao carregar a página
 document.addEventListener('DOMContentLoaded', clearTextFields);
-
