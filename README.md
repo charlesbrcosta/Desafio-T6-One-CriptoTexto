@@ -52,7 +52,7 @@ Para uma experiência completa e visual do CriptoTexto em funcionamento, assista
 
 ![Demonstração](./assets/screenShot/CriptoTexto.gif)
 
-Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui.](https://charlesbrcosta.github.io/CriptoTexto-challengeonedecodificador6)
+Além disso, você pode acessar a demonstração interativa do CriptoTexto, [clique aqui.](https://charlesbrcosta.github.io/Desafio-T6-One-CriptoTexto/)
 
 ## :warning: Pré-requisitos
 
